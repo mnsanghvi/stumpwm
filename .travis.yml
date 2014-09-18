@@ -12,9 +12,11 @@ env:
     # - LISP=cmucl
     # - LISP=ecl
 
-matrix:
- allow_failures:
-   - env: LISP=clisp
+## Lets get clisp to work properly, so fail the build
+## if clisp build fails.
+#matrix:
+# allow_failures:
+#   - env: LISP=clisp
 
 install:
   - sudo apt-get install texinfo
@@ -32,3 +34,4 @@ before_script:
 
 script:
   - make
+  - make test
