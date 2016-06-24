@@ -21,7 +21,7 @@ env:
 #   - env: LISP=clisp
 
 install:
-  - sudo apt-get install texinfo
+  - apt-get install texinfo sbcl
   - if [ -x ./install.sh ] && head -2 ./install.sh | grep '^#cl-travis' > /dev/null;
     then
       ./install.sh;
